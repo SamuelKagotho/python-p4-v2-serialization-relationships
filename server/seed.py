@@ -15,6 +15,8 @@ with app.app_context():
     Zookeeper.query.delete()
     Enclosure.query.delete()
 
+    print('seeding!!!')
+
     zookeepers = []
     for n in range(25):
         zk = Zookeeper(name=fake.name(), birthday=fake.date_between(
@@ -49,3 +51,5 @@ with app.app_context():
 
     db.session.add_all(animals)
     db.session.commit()
+
+    print('seeding complete!!')
